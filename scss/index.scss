@@ -41,6 +41,9 @@
 
 /* Utilities: specific helper classes, overrides
    ========================================================================== */
+.cursor-pointer {
+  cursor: pointer;
+}
 .font-weight-100 {
   font-weight: 100;
 }
@@ -562,13 +565,13 @@ li {
   &.align {
     text-align: $d-text-align;
   }
-  &.left-align {
+  &.text-align-left {
     text-align: left;
   }
-  &.right-align {
+  &.text-align-right {
     text-align: right;
   }
-  &.center-align {
+  &.text-align-center {
     text-align: center;
   }
 }
@@ -596,6 +599,7 @@ html {
   }
   @include textObjects {
     @include font-size;
+    @include text-align;
     line-height: $d-line-height;
   }
   @include flex;

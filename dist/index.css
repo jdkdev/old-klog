@@ -358,6 +358,9 @@ input.invalid:invalid {
    ========== */
 /* Utilities: specific helper classes, overrides
    ========================================================================== */
+.cursor-pointer {
+  cursor: pointer; }
+
 .font-weight-100 {
   font-weight: 100; }
 
@@ -1324,29 +1327,29 @@ html {
     html h5.align,
     html h6.align {
       text-align: center; }
-    html p.left-align,
-    html h1.left-align,
-    html h2.left-align,
-    html h3.left-align,
-    html h4.left-align,
-    html h5.left-align,
-    html h6.left-align {
+    html p.text-align-left,
+    html h1.text-align-left,
+    html h2.text-align-left,
+    html h3.text-align-left,
+    html h4.text-align-left,
+    html h5.text-align-left,
+    html h6.text-align-left {
       text-align: left; }
-    html p.right-align,
-    html h1.right-align,
-    html h2.right-align,
-    html h3.right-align,
-    html h4.right-align,
-    html h5.right-align,
-    html h6.right-align {
+    html p.text-align-right,
+    html h1.text-align-right,
+    html h2.text-align-right,
+    html h3.text-align-right,
+    html h4.text-align-right,
+    html h5.text-align-right,
+    html h6.text-align-right {
       text-align: right; }
-    html p.center-align,
-    html h1.center-align,
-    html h2.center-align,
-    html h3.center-align,
-    html h4.center-align,
-    html h5.center-align,
-    html h6.center-align {
+    html p.text-align-center,
+    html h1.text-align-center,
+    html h2.text-align-center,
+    html h3.text-align-center,
+    html h4.text-align-center,
+    html h5.text-align-center,
+    html h6.text-align-center {
       text-align: center; }
   html span,
   html input,
@@ -1403,6 +1406,30 @@ html {
     html button.font-size-xxl,
     html a.font-size-xxl {
       font-size: 3rem; }
+    html span.align,
+    html input.align,
+    html img.align,
+    html button.align,
+    html a.align {
+      text-align: center; }
+    html span.text-align-left,
+    html input.text-align-left,
+    html img.text-align-left,
+    html button.text-align-left,
+    html a.text-align-left {
+      text-align: left; }
+    html span.text-align-right,
+    html input.text-align-right,
+    html img.text-align-right,
+    html button.text-align-right,
+    html a.text-align-right {
+      text-align: right; }
+    html span.text-align-center,
+    html input.text-align-center,
+    html img.text-align-center,
+    html button.text-align-center,
+    html a.text-align-center {
+      text-align: center; }
   html .flex,
   html article {
     display: flex;

@@ -9,7 +9,7 @@
     That guy may be the hammerist you've every seen, but it takes more than a
     great hammer to build a web app -- and we're not screwing around with nails.
   </p>
-  <p>I will write more this later...</p>
+  <p>I will write more on this later...</p>
   <p>Below is some Lorem Ipsum to fill out the page.</p>
   <p>
     Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum,

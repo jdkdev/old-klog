@@ -23,14 +23,20 @@
   }
 </script>
 
+<style>
+
+</style>
+
 <section class=" mt markdown">
   {#if showArticles}
     <article class="pl w-max-xxs stretch-all float-left" style="width: 300px;">
       <h2>Articles</h2>
       {#each articles as article}
-        <span class="p" on:click={() => setCurrentArticle(article)}>
+        <button
+          class="link flex-start text-align-left"
+          on:click={() => setCurrentArticle(article)}>
           {article.name}
-        </span>
+        </button>
       {/each}
     </article>
   {:else}
