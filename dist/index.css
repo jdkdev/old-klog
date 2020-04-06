@@ -358,6 +358,27 @@ input.invalid:invalid {
    ========== */
 /* Utilities: specific helper classes, overrides
    ========================================================================== */
+.font-weight-100 {
+  font-weight: 100; }
+
+.font-weight-200 {
+  font-weight: 200; }
+
+.font-weight-300 {
+  font-weight: 300; }
+
+.font-weight-600 {
+  font-weight: 600; }
+
+.float-left {
+  float: left; }
+
+.float-right {
+  float: right; }
+
+.bg {
+  background-color: #000; }
+
 /*
 What about word wrap?
    What do br and hr do ??
@@ -529,6 +550,21 @@ Variables
 .h-screen {
   height: 100vh; }
 
+.w-max-xxs {
+  max-width: 24rem; }
+
+.w-max-xs {
+  max-width: 32rem; }
+
+.w-max-sm {
+  max-width: 40rem; }
+
+.w-max-md {
+  max-width: 48rem; }
+
+.w-max-lg {
+  max-width: 64rem; }
+
 .border {
   border: 1px solid #222222; }
 
@@ -602,6 +638,18 @@ a,
   .link:hover {
     background-color: transparent;
     color: #47a3f3; }
+
+h1 {
+  font-size: 2.25rem;
+  font-weight: 700; }
+
+h2 {
+  font-size: 1.5rem;
+  font-weight: 700; }
+
+h3 {
+  font-size: 1.125rem;
+  font-weight: 500; }
 
 html {
   font-size: 0.75rem;
@@ -1484,5 +1532,17 @@ html {
       font-size: 0.8em; }
     html .lg-font-size-larger {
       font-size: 1.2em; } }
+
+.reader,
+.markdown {
+  font-family: Montserrat, sans-serif;
+  line-height: 1.8;
+  background-color: #00000004;
+  font-size: 1.125rem;
+  color: #222222; }
+  .reader p ~ p,
+  .markdown p ~ p {
+    margin-top: 1rem;
+    word-wrap: word; }
 
 /*# sourceMappingURL=index.css.map */

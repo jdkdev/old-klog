@@ -13,7 +13,7 @@
   // Handling Auth
 </script>
 
-<main class="">
+<main class="" style="">
   <Header />
   <slot />
   <Footer />

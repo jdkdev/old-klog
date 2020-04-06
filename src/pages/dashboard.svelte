@@ -18,8 +18,9 @@
 
   let getUsers = async function(withDeleted = "") {
     let res = await ajx.get("/users" + withDeleted);
+    //notekar.knight.works/api/v1/files
 
-    users = res.filter(user => user.date_added !== null);
+    https: users = res.filter(user => user.date_added !== null);
   };
 
   let deactivate = async function(id) {

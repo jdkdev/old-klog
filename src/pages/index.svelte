@@ -1,5 +1,5 @@
 <script>
-  import { auth, currentUser } from "$frontier";
+  import { url } from "$router";
 </script>
 
 <style>
@@ -39,12 +39,9 @@
   .contact {
     font-family: Montserrat, sans-serif;
     margin-left: 20px;
-    padding-bottom: 4px;
     letter-spacing: 3px;
     font-size: 24px;
     color: #f0f0f0;
-    position: fixed;
-    bottom: 0px;
     border-bottom: 2px solid transparent;
   }
   .contact:hover {
@@ -64,6 +61,7 @@
       font-size: 115px;
       font-weight: 200;
       letter-spacing: 4px;
+      line-height: 85px;
     }
     .subtitle {
       font-size: 34px;
@@ -75,6 +73,8 @@
       font-size: 185px;
       font-weight: 100;
       letter-spacing: 7px;
+      line-height: 150px;
+      padding-top: 70px;
     }
     .subtitle {
       font-size: 42px;
@@ -87,7 +87,8 @@
   <title>Knightworks</title>
 </svelte:head>
 
-<section class="splash">
+<section class="flex splash">
+
   <div class="pad-title">
     <article>
       <h1 class="title">Knightworks</h1>
@@ -97,34 +98,45 @@
       </h2>
     </article>
   </div>
-  <a href="mailto:dev@knight.works">
-    <div class="contact" mailto:>
-      <span style="">dev</span>
-      <span style="font-size:26px; color:#ffae32e3;margin: 0 -10px;">@</span>
-      <span>knight.works</span>
+
+  <article class="row stretch mt-auto" style="background-color:#000000b8">
+    <a
+      class="contact display-none lm-display mr-auto"
+      style="margin-right:3.5rem;"
+      href="mailto:dev@knight.works">
+      <div class="" mailto:>
+        <span style="">dev</span>
+        <span style="font-size:26px; color:#ffae32e3;margin: 0 -10px;">@</span>
+        <span>knight.works</span>
+      </div>
+    </a>
+    <div class="grow ">
+      <a class="contact" href={$url('/articles')}>articles</a>
+      <a class="contact" href={$url('/about')}>about</a>
     </div>
-  </a>
-  <a
-    class="photo-credit"
-    style="background-color:black;color:white;text-decoration:none;padding:4px
-    6px;font-family:-apple-system, BlinkMacSystemFont, &quot;San
-    Francisco&quot;, &quot;Helvetica Neue&quot;, Helvetica, Ubuntu, Roboto,
-    Noto, &quot;Segoe UI&quot;, Arial,
-    sans-serif;font-size:12px;font-weight:bold;line-height:1.2;border-radius:3px"
-    href="https://unsplash.com/@tjump?utm_medium=referral&amp;utm_campaign=photographer-credit&amp;utm_content=creditBadge"
-    target="_blank"
-    rel="noopener noreferrer">
-    <span style="display:inline-block;padding:2px 3px">
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        style="height:8px;width:auto;position:relative;vertical-align:middle;top:-2px;fill:white"
-        viewBox="0 0 32 32">
-        <title>unsplash-logo</title>
-        <path d="M10 9V0h12v9H10zm12 5h10v18H0V14h10v9h12v-9z" />
-      </svg>
-    </span>
-    <span style="display:inline-block;padding:2px 3px; font-size:8px;">
-      Photo by Nik Shuliahin
-    </span>
-  </a>
+    <a
+      class="photo-credit"
+      style="background-color:black;color:white;text-decoration:none;padding:4px
+      6px;font-family:-apple-system, BlinkMacSystemFont, &quot;San
+      Francisco&quot;, &quot;Helvetica Neue&quot;, Helvetica, Ubuntu, Roboto,
+      Noto, &quot;Segoe UI&quot;, Arial,
+      sans-serif;font-size:12px;font-weight:bold;line-height:1.2;border-radius:3px"
+      href="https://unsplash.com/@tjump?utm_medium=referral&amp;utm_campaign=photographer-credit&amp;utm_content=creditBadge"
+      target="_blank"
+      rel="noopener noreferrer">
+      <span style="display:inline-block;padding:2px 3px">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          style="height:8px;width:auto;position:relative;vertical-align:middle;top:-2px;fill:white"
+          viewBox="0 0 32 32">
+          <title>unsplash-logo</title>
+          <path d="M10 9V0h12v9H10zm12 5h10v18H0V14h10v9h12v-9z" />
+        </svg>
+      </span>
+      <span style="display:inline-block;padding:2px 3px; font-size:8px;">
+        Photo by Nik Shuliahin
+      </span>
+    </a>
+  </article>
+
 </section>

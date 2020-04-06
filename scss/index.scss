@@ -41,6 +41,28 @@
 
 /* Utilities: specific helper classes, overrides
    ========================================================================== */
+.font-weight-100 {
+  font-weight: 100;
+}
+.font-weight-200 {
+  font-weight: 200;
+}
+.font-weight-300 {
+  font-weight: 300;
+}
+.font-weight-600 {
+  font-weight: 600;
+}
+.float-left {
+  float: left;
+}
+.float-right {
+  float: right;
+}
+$d-background-color: #000;
+.bg {
+  background-color: $d-background-color;
+}
 @function sqrt($r) {
   $x0: 1;
   $x1: $x0;
@@ -354,6 +376,22 @@ $d-margin-y: $d-margin * 2;
   height: 100vh;
 }
 //Width - min max
+.w-max-xxs {
+  max-width: $xxs;
+}
+.w-max-xs {
+  max-width: $xs;
+}
+.w-max-sm {
+  max-width: $sm;
+}
+.w-max-md {
+  max-width: $md;
+}
+.w-max-lg {
+  max-width: $lg;
+}
+
 //Height - min max
 //Grid
 //Border
@@ -534,6 +572,19 @@ li {
     text-align: center;
   }
 }
+
+h1 {
+  font-size: $d-font-size * 3;
+  font-weight: 700;
+}
+h2 {
+  font-size: $d-font-size * 2;
+  font-weight: 700;
+}
+h3 {
+  font-size: $d-font-size * 1.5;
+  font-weight: 500;
+}
 // Combined Styles begin here
 html {
   @include site-layout;
@@ -550,4 +601,17 @@ html {
   @include flex;
 
   @include font-settings;
+}
+
+.reader,
+.markdown {
+  font-family: Montserrat, sans-serif;
+  line-height: $d-line-height * 1.2;
+  background-color: #00000004;
+  font-size: $d-font-size * 1.5;
+  color: $d-color-black;
+  p ~ p {
+    margin-top: $d-margin-x;
+    word-wrap: word;
+  }
 }
