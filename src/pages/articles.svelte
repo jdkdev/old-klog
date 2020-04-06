@@ -2,7 +2,7 @@
   import { ajx } from "$frontier";
   import { onMount } from "svelte";
 
-  let articles = [{ name: "third one", contents: "" }];
+  let articles = [{ name: "loading...", contents: "" }];
 
   $: currentArticle = { name: "", contents: "" };
   $: showArticles = true;
