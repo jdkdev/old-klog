@@ -2,15 +2,20 @@
   import { ajx } from "$frontier";
   import { onMount } from "svelte";
 
-  let articles = [{ attributes: { filename: "loading...", contents: "" } }];
+  let articles = [
+    { mattter: { html: "", md: "" }, meta: { name: "loading..." } }
+  ];
 
-  $: currentArticle = { name: "", contents: "" };
+  $: currentArticle = {
+    name: "Welcome!",
+    contents: "Welcome! Select an article to read..."
+  };
   $: showArticles = true;
 
   function setCurrentArticle(article) {
-    currentArticle.name = article.attributes.name;
-    // currentArticle.contents = markdownit().render(article.attributes.contents);
-    currentArticle.contents = article.attributes.html;
+    currentArticle.name = article.meta.name;
+    // currentArticle.contents = markdownit().render(article.meta.contents);
+    currentArticle.contents = article.matter.html;
     showArticles = false;
   }
 
@@ -21,7 +26,7 @@
   async function getFiles() {
     // let res = await ajx.get("/files");
     let res = await ajx.get(
-      "https://notekar.knight.works/api/v1/published/knight.works"
+      "https://notekar.knight.works/api/v1/files/published/knight.works"
     );
     articles = res.data;
   }
@@ -31,26 +36,16 @@
 
 </style>
 
-<section class=" mt markdown">
-  {#if showArticles}
-    <article class="pl w-max-xxs stretch-all float-left" style="width: 300px;">
-      <h2>Articles</h2>
-      {#each articles as article}
-        <button
-          class="link flex-start text-align-left"
-          on:click={() => setCurrentArticle(article)}>
-          {article.attributes.filename}
-        </button>
-      {/each}
-    </article>
-  {:else}
-    <div class="w-max-xxs" style="width:306px;float:left;">
-      <button class="link" on:click={() => (showArticles = true)}>
-        &lt;&lt; back to articles
+<section class="markdown row">
+  <article class="ml" style="width: 320px;">
+    <h2>Articles</h2>
+    {#each articles as article}
+      <button class="link" on:click={() => setCurrentArticle(article)}>
+        {article.meta.name}
       </button>
-    </div>
-  {/if}
-  <div class="m-auto p w-max-lg">
+    {/each}
+  </article>
+  <div class="box _r">
     <div>
       {@html currentArticle.contents}
     </div>

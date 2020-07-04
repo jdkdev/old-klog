@@ -39,8 +39,8 @@
     </article>
   </header>
 {:else if !$isActive('/index')}
-  <header class="bg flex" style="opacity: .92;">
-    <article class="stretch">
+  <header class="block mw x mb" style="background-color: #000;opacity: .92;">
+    <article class="">
       <a href={$url('/index')}>
         <h1 class="title">Knightworks</h1>
       </a>

@@ -28,6 +28,9 @@
     background: url("https://res.cloudinary.com/knightworks/image/upload/q_35/v1584417552/knight-unsplash-medium-dark-reduced_srbz9a.jpg");
     height: 100vh;
     background-size: cover;
+    display: flex;
+    flex-flow: column;
+    justify-content: space-between;
   }
   .photo-credit {
     display: none;
@@ -90,7 +93,7 @@
 <section class="flex splash">
 
   <div class="pad-title">
-    <article>
+    <article class="block mw x">
       <h1 class="title">Knightworks</h1>
       <h2 class="subtitle">
         code with
@@ -99,10 +102,11 @@
     </article>
   </div>
 
-  <article class="row stretch mt-auto" style="background-color:#000000b8">
+  <!-- <article class="row stretch mt-auto" style="background-color:#000000b8"> -->
+  <article class="row mw" style="background-color:#000000b8">
     <a
-      class="contact display-none lm-display mr-auto"
-      style="margin-right:3.5rem;"
+      class="contact dn d@lm"
+      style="margin-right:3.5rem;flex: 0 0 auto;"
       href="mailto:dev@knight.works">
       <div class="" mailto:>
         <span style="">dev</span>
@@ -110,10 +114,11 @@
         <span>knight.works</span>
       </div>
     </a>
-    <div class="grow ">
+    <div class="">
       <a class="contact" href={$url('/articles')}>articles</a>
       <a class="contact" href={$url('/about')}>about</a>
     </div>
+    <div class="spacer" />
     <a
       class="photo-credit"
       style="background-color:black;color:white;text-decoration:none;padding:4px
