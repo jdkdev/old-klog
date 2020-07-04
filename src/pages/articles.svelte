@@ -2,14 +2,15 @@
   import { ajx } from "$frontier";
   import { onMount } from "svelte";
 
-  let articles = [{ name: "loading...", contents: "" }];
+  let articles = [{ attributes: { filename: "loading...", contents: "" } }];
 
   $: currentArticle = { name: "", contents: "" };
   $: showArticles = true;
 
   function setCurrentArticle(article) {
-    currentArticle.name = article.name;
-    currentArticle.contents = markdownit().render(article.contents);
+    currentArticle.name = article.attributes.name;
+    // currentArticle.contents = markdownit().render(article.attributes.contents);
+    currentArticle.contents = article.attributes.html;
     showArticles = false;
   }
 
@@ -18,7 +19,10 @@
   });
 
   async function getFiles() {
-    let res = await ajx.get("https://notekar.knight.works/api/v1/files");
+    // let res = await ajx.get("/files");
+    let res = await ajx.get(
+      "https://notekar.knight.works/api/v1/published/knight.works"
+    );
     articles = res.data;
   }
 </script>
@@ -35,19 +39,18 @@
         <button
           class="link flex-start text-align-left"
           on:click={() => setCurrentArticle(article)}>
-          {article.name}
+          {article.attributes.filename}
         </button>
       {/each}
     </article>
   {:else}
-    <div class="w-max-xxs">
+    <div class="w-max-xxs" style="width:306px;float:left;">
       <button class="link" on:click={() => (showArticles = true)}>
         &lt;&lt; back to articles
       </button>
     </div>
   {/if}
   <div class="m-auto p w-max-lg">
-    <h3>{currentArticle.name}</h3>
     <div>
       {@html currentArticle.contents}
     </div>

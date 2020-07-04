@@ -2919,7 +2919,7 @@ var app = (function () {
     // Move this to .env.js and make changes in rollup.config.js
     var _env = {
         authUrl: 'https://auth.knight.works/api/v1/login',
-        apiUrl: 'http://localhost:3000/api/v1'
+        apiUrl: 'http://localhost:3140/api/v1'
     };
 
     /**
@@ -4588,7 +4588,7 @@ var app = (function () {
     	return child_ctx;
     }
 
-    // (43:2) {:else}
+    // (45:2) {:else}
     function create_else_block$2(ctx) {
     	let div;
     	let button;
@@ -4600,9 +4600,11 @@ var app = (function () {
     			button = element("button");
     			button.textContent = "<< back to articles";
     			attr_dev(button, "class", "link");
-    			add_location(button, file$8, 44, 6, 1197);
+    			add_location(button, file$8, 46, 6, 1386);
     			attr_dev(div, "class", "w-max-xxs");
-    			add_location(div, file$8, 43, 4, 1167);
+    			set_style(div, "width", "306px");
+    			set_style(div, "float", "left");
+    			add_location(div, file$8, 45, 4, 1324);
     		},
     		m: function mount(target, anchor, remount) {
     			insert_dev(target, div, anchor);
@@ -4621,14 +4623,14 @@ var app = (function () {
     		block,
     		id: create_else_block$2.name,
     		type: "else",
-    		source: "(43:2) {:else}",
+    		source: "(45:2) {:else}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (32:2) {#if showArticles}
+    // (34:2) {#if showArticles}
     function create_if_block$4(ctx) {
     	let article;
     	let h2;
@@ -4652,10 +4654,10 @@ var app = (function () {
     				each_blocks[i].c();
     			}
 
-    			add_location(h2, file$8, 33, 6, 908);
+    			add_location(h2, file$8, 35, 6, 1050);
     			attr_dev(article, "class", "pl w-max-xxs stretch-all float-left");
     			set_style(article, "width", "300px");
-    			add_location(article, file$8, 32, 4, 826);
+    			add_location(article, file$8, 34, 4, 968);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, article, anchor);
@@ -4701,17 +4703,17 @@ var app = (function () {
     		block,
     		id: create_if_block$4.name,
     		type: "if",
-    		source: "(32:2) {#if showArticles}",
+    		source: "(34:2) {#if showArticles}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (35:6) {#each articles as article}
+    // (37:6) {#each articles as article}
     function create_each_block$1(ctx) {
     	let button;
-    	let t0_value = /*article*/ ctx[7].name + "";
+    	let t0_value = /*article*/ ctx[7].attributes.filename + "";
     	let t0;
     	let t1;
     	let dispose;
@@ -4726,7 +4728,7 @@ var app = (function () {
     			t0 = text(t0_value);
     			t1 = space();
     			attr_dev(button, "class", "link flex-start text-align-left");
-    			add_location(button, file$8, 35, 8, 968);
+    			add_location(button, file$8, 37, 8, 1110);
     		},
     		m: function mount(target, anchor, remount) {
     			insert_dev(target, button, anchor);
@@ -4737,7 +4739,7 @@ var app = (function () {
     		},
     		p: function update(new_ctx, dirty) {
     			ctx = new_ctx;
-    			if (dirty & /*articles*/ 1 && t0_value !== (t0_value = /*article*/ ctx[7].name + "")) set_data_dev(t0, t0_value);
+    			if (dirty & /*articles*/ 1 && t0_value !== (t0_value = /*article*/ ctx[7].attributes.filename + "")) set_data_dev(t0, t0_value);
     		},
     		d: function destroy(detaching) {
     			if (detaching) detach_dev(button);
@@ -4749,7 +4751,7 @@ var app = (function () {
     		block,
     		id: create_each_block$1.name,
     		type: "each",
-    		source: "(35:6) {#each articles as article}",
+    		source: "(37:6) {#each articles as article}",
     		ctx
     	});
 
@@ -4758,12 +4760,8 @@ var app = (function () {
 
     function create_fragment$a(ctx) {
     	let section;
-    	let t0;
+    	let t;
     	let div1;
-    	let h3;
-    	let t1_value = /*currentArticle*/ ctx[1].name + "";
-    	let t1;
-    	let t2;
     	let div0;
     	let raw_value = /*currentArticle*/ ctx[1].contents + "";
 
@@ -4779,18 +4777,14 @@ var app = (function () {
     		c: function create() {
     			section = element("section");
     			if_block.c();
-    			t0 = space();
+    			t = space();
     			div1 = element("div");
-    			h3 = element("h3");
-    			t1 = text(t1_value);
-    			t2 = space();
     			div0 = element("div");
-    			add_location(h3, file$8, 50, 4, 1365);
-    			add_location(div0, file$8, 51, 4, 1400);
+    			add_location(div0, file$8, 52, 4, 1554);
     			attr_dev(div1, "class", "m-auto p w-max-lg");
-    			add_location(div1, file$8, 49, 2, 1329);
+    			add_location(div1, file$8, 51, 2, 1518);
     			attr_dev(section, "class", " mt markdown");
-    			add_location(section, file$8, 30, 0, 770);
+    			add_location(section, file$8, 32, 0, 912);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -4798,11 +4792,8 @@ var app = (function () {
     		m: function mount(target, anchor) {
     			insert_dev(target, section, anchor);
     			if_block.m(section, null);
-    			append_dev(section, t0);
+    			append_dev(section, t);
     			append_dev(section, div1);
-    			append_dev(div1, h3);
-    			append_dev(h3, t1);
-    			append_dev(div1, t2);
     			append_dev(div1, div0);
     			div0.innerHTML = raw_value;
     		},
@@ -4815,11 +4806,10 @@ var app = (function () {
 
     				if (if_block) {
     					if_block.c();
-    					if_block.m(section, t0);
+    					if_block.m(section, t);
     				}
     			}
 
-    			if (dirty & /*currentArticle*/ 2 && t1_value !== (t1_value = /*currentArticle*/ ctx[1].name + "")) set_data_dev(t1, t1_value);
     			if (dirty & /*currentArticle*/ 2 && raw_value !== (raw_value = /*currentArticle*/ ctx[1].contents + "")) div0.innerHTML = raw_value;		},
     		i: noop,
     		o: noop,
@@ -4841,11 +4831,18 @@ var app = (function () {
     }
 
     function instance$a($$self, $$props, $$invalidate) {
-    	let articles = [{ name: "loading...", contents: "" }];
+    	let articles = [
+    		{
+    			attributes: { filename: "loading...", contents: "" }
+    		}
+    	];
 
     	function setCurrentArticle(article) {
-    		$$invalidate(1, currentArticle.name = article.name, currentArticle);
-    		$$invalidate(1, currentArticle.contents = markdownit().render(article.contents), currentArticle);
+    		$$invalidate(1, currentArticle.name = article.attributes.name, currentArticle);
+
+    		// currentArticle.contents = markdownit().render(article.attributes.contents);
+    		$$invalidate(1, currentArticle.contents = article.attributes.html, currentArticle);
+
     		$$invalidate(2, showArticles = false);
     	}
 
@@ -4854,7 +4851,9 @@ var app = (function () {
     	});
 
     	async function getFiles() {
-    		let res = await frontend_2.get("https://notekar.knight.works/api/v1/files");
+    		let res = await frontend_2.get("/files");
+
+    		// let res = await ajx.get("https://notekar.knight.works/api/v1/files");
     		$$invalidate(0, articles = res.data);
     	}
 

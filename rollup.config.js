@@ -12,7 +12,8 @@ import sass from 'node-sass'
 
 const production = !process.env.ROLLUP_WATCH
 const productionSite = 'frontier.js'
-const port = 3000
+//const port = 3000
+const port = 3140
 
 let apiUrl = production
   ? `https://${productionSite}/api/v1`
