@@ -3827,24 +3827,24 @@ var app = (function () {
     			t3 = space();
     			a2 = element("a");
     			t4 = text("about");
-    			attr_dev(h1, "class", "title svelte-iefq9r");
-    			add_location(h1, file$3, 45, 8, 2097);
+    			attr_dev(h1, "class", "title svelte-8mp5w2");
+    			add_location(h1, file$3, 45, 8, 2104);
     			attr_dev(a0, "href", a0_href_value = /*$url*/ ctx[1]("/index"));
-    			add_location(a0, file$3, 44, 6, 2063);
+    			add_location(a0, file$3, 44, 6, 2070);
     			attr_dev(article0, "class", "");
-    			add_location(article0, file$3, 43, 4, 2038);
-    			attr_dev(a1, "class", "contact svelte-iefq9r");
+    			add_location(article0, file$3, 43, 4, 2045);
+    			attr_dev(a1, "class", "link-item svelte-8mp5w2");
     			attr_dev(a1, "href", a1_href_value = /*$url*/ ctx[1]("/articles"));
-    			add_location(a1, file$3, 49, 6, 2190);
-    			attr_dev(a2, "class", "contact svelte-iefq9r");
+    			add_location(a1, file$3, 49, 6, 2197);
+    			attr_dev(a2, "class", "link-item svelte-8mp5w2");
     			attr_dev(a2, "href", a2_href_value = /*$url*/ ctx[1]("/about"));
-    			add_location(a2, file$3, 50, 6, 2253);
+    			add_location(a2, file$3, 50, 6, 2262);
     			attr_dev(article1, "class", "row");
-    			add_location(article1, file$3, 48, 4, 2162);
-    			attr_dev(header, "class", "block mw x mb");
+    			add_location(article1, file$3, 48, 4, 2169);
+    			attr_dev(header, "class", "block x i mb");
     			set_style(header, "background-color", "#000");
     			set_style(header, "opacity", ".92");
-    			add_location(header, file$3, 42, 2, 1958);
+    			add_location(header, file$3, 42, 2, 1966);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, header, anchor);
@@ -3924,21 +3924,21 @@ var app = (function () {
     			a1 = element("a");
     			t6 = text("Examples");
     			attr_dev(span0, "class", "show-md");
-    			add_location(span0, file$3, 32, 8, 1656);
+    			add_location(span0, file$3, 32, 8, 1664);
     			attr_dev(span1, "class", "stretch");
-    			add_location(span1, file$3, 31, 6, 1625);
+    			add_location(span1, file$3, 31, 6, 1633);
     			attr_dev(article0, "class", "m");
-    			add_location(article0, file$3, 30, 4, 1599);
+    			add_location(article0, file$3, 30, 4, 1607);
     			attr_dev(a0, "class", "lm");
     			attr_dev(a0, "href", a0_href_value = /*$url*/ ctx[1]("/"));
-    			add_location(a0, file$3, 37, 6, 1799);
+    			add_location(a0, file$3, 37, 6, 1807);
     			attr_dev(a1, "class", "lm");
     			attr_dev(a1, "href", a1_href_value = /*$url*/ ctx[1]("/examples"));
-    			add_location(a1, file$3, 38, 6, 1845);
+    			add_location(a1, file$3, 38, 6, 1853);
     			attr_dev(article1, "class", "row space-around");
-    			add_location(article1, file$3, 36, 4, 1758);
+    			add_location(article1, file$3, 36, 4, 1766);
     			attr_dev(header, "class", "");
-    			add_location(header, file$3, 29, 2, 1577);
+    			add_location(header, file$3, 29, 2, 1585);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, header, anchor);
@@ -4570,12 +4570,13 @@ var app = (function () {
     	return child_ctx;
     }
 
-    // (43:4) {#each articles as article}
+    // (48:4) {#each articles as article}
     function create_each_block$1(ctx) {
     	let button;
     	let t0_value = /*article*/ ctx[6].meta.name + "";
     	let t0;
     	let t1;
+    	let button_title_value;
     	let dispose;
 
     	function click_handler(...args) {
@@ -4587,8 +4588,9 @@ var app = (function () {
     			button = element("button");
     			t0 = text(t0_value);
     			t1 = space();
-    			attr_dev(button, "class", "link");
-    			add_location(button, file$8, 43, 6, 1137);
+    			attr_dev(button, "title", button_title_value = /*article*/ ctx[6].meta.name);
+    			attr_dev(button, "class", "vl i link ...");
+    			add_location(button, file$8, 48, 6, 1456);
     		},
     		m: function mount(target, anchor, remount) {
     			insert_dev(target, button, anchor);
@@ -4600,6 +4602,10 @@ var app = (function () {
     		p: function update(new_ctx, dirty) {
     			ctx = new_ctx;
     			if (dirty & /*articles*/ 1 && t0_value !== (t0_value = /*article*/ ctx[6].meta.name + "")) set_data_dev(t0, t0_value);
+
+    			if (dirty & /*articles*/ 1 && button_title_value !== (button_title_value = /*article*/ ctx[6].meta.name)) {
+    				attr_dev(button, "title", button_title_value);
+    			}
     		},
     		d: function destroy(detaching) {
     			if (detaching) detach_dev(button);
@@ -4611,7 +4617,7 @@ var app = (function () {
     		block,
     		id: create_each_block$1.name,
     		type: "each",
-    		source: "(43:4) {#each articles as article}",
+    		source: "(48:4) {#each articles as article}",
     		ctx
     	});
 
@@ -4650,15 +4656,15 @@ var app = (function () {
     			t2 = space();
     			div1 = element("div");
     			div0 = element("div");
-    			add_location(h2, file$8, 41, 4, 1081);
+    			add_location(h2, file$8, 46, 4, 1400);
     			attr_dev(article, "class", "ml");
     			set_style(article, "width", "320px");
-    			add_location(article, file$8, 40, 2, 1034);
-    			add_location(div0, file$8, 49, 4, 1299);
+    			add_location(article, file$8, 45, 2, 1353);
+    			add_location(div0, file$8, 54, 4, 1655);
     			attr_dev(div1, "class", "box _r");
-    			add_location(div1, file$8, 48, 2, 1274);
+    			add_location(div1, file$8, 53, 2, 1630);
     			attr_dev(section, "class", "markdown row");
-    			add_location(section, file$8, 39, 0, 1001);
+    			add_location(section, file$8, 44, 0, 1320);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -4679,7 +4685,7 @@ var app = (function () {
     			div0.innerHTML = raw_value;
     		},
     		p: function update(ctx, [dirty]) {
-    			if (dirty & /*setCurrentArticle, articles*/ 5) {
+    			if (dirty & /*articles, setCurrentArticle*/ 5) {
     				each_value = /*articles*/ ctx[0];
     				validate_each_argument(each_value);
     				let i;
@@ -8934,43 +8940,42 @@ var app = (function () {
     			span5.textContent = "Photo by Nik Shuliahin";
     			document.title = "Knightworks";
     			attr_dev(h1, "class", "title svelte-1tu0azx");
-    			add_location(h1, file$c, 97, 6, 5480);
+    			add_location(h1, file$c, 97, 6, 5479);
     			attr_dev(span0, "class", "primary-color svelte-1tu0azx");
     			attr_dev(span0, "title", "");
-    			add_location(span0, file$c, 100, 8, 5569);
+    			add_location(span0, file$c, 100, 8, 5568);
     			attr_dev(h2, "class", "subtitle svelte-1tu0azx");
-    			add_location(h2, file$c, 98, 6, 5521);
-    			attr_dev(article0, "class", "block mw x");
+    			add_location(h2, file$c, 98, 6, 5520);
+    			attr_dev(article0, "class", "block x i");
     			add_location(article0, file$c, 96, 4, 5445);
     			attr_dev(div0, "class", "pad-title svelte-1tu0azx");
     			add_location(div0, file$c, 95, 2, 5417);
-    			add_location(span1, file$c, 112, 8, 5964);
+    			add_location(span1, file$c, 112, 8, 5954);
     			set_style(span2, "font-size", "26px");
     			set_style(span2, "color", "#ffae32e3");
     			set_style(span2, "margin", "0 -10px");
-    			add_location(span2, file$c, 113, 8, 5998);
-    			add_location(span3, file$c, 114, 8, 6078);
+    			add_location(span2, file$c, 113, 8, 5988);
+    			add_location(span3, file$c, 114, 8, 6068);
     			attr_dev(div1, "class", "");
-    			attr_dev(div1, "mailto:", "");
-    			add_location(div1, file$c, 111, 6, 5933);
+    			add_location(div1, file$c, 111, 6, 5931);
     			attr_dev(a0, "class", "contact dn d@lm svelte-1tu0azx");
     			set_style(a0, "margin-right", "3.5rem");
     			set_style(a0, "flex", "0 0 auto");
     			attr_dev(a0, "href", "mailto:dev@knight.works");
-    			add_location(a0, file$c, 107, 4, 5806);
+    			add_location(a0, file$c, 107, 4, 5804);
     			attr_dev(a1, "class", "contact svelte-1tu0azx");
     			attr_dev(a1, "href", a1_href_value = /*$url*/ ctx[0]("/articles"));
-    			add_location(a1, file$c, 118, 6, 6151);
+    			add_location(a1, file$c, 118, 6, 6141);
     			attr_dev(a2, "class", "contact svelte-1tu0azx");
     			attr_dev(a2, "href", a2_href_value = /*$url*/ ctx[0]("/about"));
-    			add_location(a2, file$c, 119, 6, 6214);
+    			add_location(a2, file$c, 119, 6, 6204);
     			attr_dev(div2, "class", "");
-    			add_location(div2, file$c, 117, 4, 6130);
+    			add_location(div2, file$c, 117, 4, 6120);
     			attr_dev(div3, "class", "spacer");
-    			add_location(div3, file$c, 121, 4, 6280);
-    			add_location(title, file$c, 137, 10, 7126);
+    			add_location(div3, file$c, 121, 4, 6270);
+    			add_location(title, file$c, 137, 10, 7116);
     			attr_dev(path, "d", "M10 9V0h12v9H10zm12 5h10v18H0V14h10v9h12v-9z");
-    			add_location(path, file$c, 138, 10, 7165);
+    			add_location(path, file$c, 138, 10, 7155);
     			attr_dev(svg, "xmlns", "http://www.w3.org/2000/svg");
     			set_style(svg, "height", "8px");
     			set_style(svg, "width", "auto");
@@ -8979,14 +8984,14 @@ var app = (function () {
     			set_style(svg, "top", "-2px");
     			set_style(svg, "fill", "white");
     			attr_dev(svg, "viewBox", "0 0 32 32");
-    			add_location(svg, file$c, 133, 8, 6935);
+    			add_location(svg, file$c, 133, 8, 6925);
     			set_style(span4, "display", "inline-block");
     			set_style(span4, "padding", "2px 3px");
-    			add_location(span4, file$c, 132, 6, 6875);
+    			add_location(span4, file$c, 132, 6, 6865);
     			set_style(span5, "display", "inline-block");
     			set_style(span5, "padding", "2px 3px");
     			set_style(span5, "font-size", "8px");
-    			add_location(span5, file$c, 141, 6, 7258);
+    			add_location(span5, file$c, 141, 6, 7248);
     			attr_dev(a3, "class", "photo-credit svelte-1tu0azx");
     			set_style(a3, "background-color", "black");
     			set_style(a3, "color", "white");
@@ -9000,10 +9005,10 @@ var app = (function () {
     			attr_dev(a3, "href", "https://unsplash.com/@tjump?utm_medium=referral&utm_campaign=photographer-credit&utm_content=creditBadge");
     			attr_dev(a3, "target", "_blank");
     			attr_dev(a3, "rel", "noopener noreferrer");
-    			add_location(a3, file$c, 122, 4, 6307);
-    			attr_dev(article1, "class", "row mw");
+    			add_location(a3, file$c, 122, 4, 6297);
+    			attr_dev(article1, "class", "row i");
     			set_style(article1, "background-color", "#000000b8");
-    			add_location(article1, file$c, 106, 2, 5742);
+    			add_location(article1, file$c, 106, 2, 5741);
     			attr_dev(section, "class", "flex splash svelte-1tu0azx");
     			add_location(section, file$c, 93, 0, 5384);
     		},

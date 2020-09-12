@@ -34,13 +34,18 @@
 
 <style>
 
+.v\.\.\. {
+  width: 100%;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
 </style>
 
 <section class="markdown row">
   <article class="ml" style="width: 320px;">
     <h2>Articles</h2>
     {#each articles as article}
-      <button class="link" on:click={() => setCurrentArticle(article)}>
+      <button title={ article.meta.name } class="vl i link ..." on:click={() => setCurrentArticle(article)}>
         {article.meta.name}
       </button>
     {/each}

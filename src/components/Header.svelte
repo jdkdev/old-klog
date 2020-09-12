@@ -13,14 +13,14 @@
     font-size: 50px;
     font-weight: 300;
   }
-  .contact {
+  .link-item {
     font-family: Montserrat, sans-serif;
     letter-spacing: 3px;
     font-size: 24px;
     color: #f0f0f0;
     border-bottom: 5px solid transparent;
   }
-  .contact:hover {
+  .link-item:hover {
     border-bottom: 5px solid #f0f0f0;
   }
 </style>
@@ -39,15 +39,15 @@
     </article>
   </header>
 {:else if !$isActive('/index')}
-  <header class="block mw x mb" style="background-color: #000;opacity: .92;">
+  <header class="block x i mb" style="background-color: #000;opacity: .92;">
     <article class="">
       <a href={$url('/index')}>
         <h1 class="title">Knightworks</h1>
       </a>
     </article>
     <article class="row">
-      <a class="contact" href={$url('/articles')}>articles</a>
-      <a class="contact" href={$url('/about')}>about</a>
+      <a class="link-item" href={$url('/articles')}>articles</a>
+      <a class="link-item" href={$url('/about')}>about</a>
     </article>
   </header>
 {/if}

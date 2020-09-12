@@ -93,7 +93,7 @@
 <section class="flex splash">
 
   <div class="pad-title">
-    <article class="block mw x">
+    <article class="block x i">
       <h1 class="title">Knightworks</h1>
       <h2 class="subtitle">
         code with
@@ -103,12 +103,12 @@
   </div>
 
   <!-- <article class="row stretch mt-auto" style="background-color:#000000b8"> -->
-  <article class="row mw" style="background-color:#000000b8">
+  <article class="row i" style="background-color:#000000b8">
     <a
       class="contact dn d@lm"
       style="margin-right:3.5rem;flex: 0 0 auto;"
       href="mailto:dev@knight.works">
-      <div class="" mailto:>
+      <div class="">
         <span style="">dev</span>
         <span style="font-size:26px; color:#ffae32e3;margin: 0 -10px;">@</span>
         <span>knight.works</span>
