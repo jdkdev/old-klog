@@ -10,6 +10,7 @@
     "build": "rollup -c --environment INCLUDE_DEPS,BUILD:production",
     "start": "sirv dist --single",
     "transfer:up": "run-s build deploy:hot",
+    "deploy": "frontier deploy -s www",
     "tar": "tar -czvf $NAME-spa.tar.gz -C dist .",
     "pack": "run-s build tar",
     "clean": "rm ./$NAME-spa.tar.gz"

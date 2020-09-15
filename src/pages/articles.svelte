@@ -10,6 +10,7 @@
     name: "Welcome!",
     contents: "Welcome! Select an article to read..."
   };
+
   $: showArticles = true;
 
   function setCurrentArticle(article) {
